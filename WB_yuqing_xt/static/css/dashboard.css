@@ -1,0 +1,217 @@
+/* 全局样式 */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+
+/* 导航栏样式 */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 卡片样式 */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+/* 统计卡片样式 */
+.card.bg-primary, .card.bg-success, .card.bg-info, .card.bg-warning {
+    border: none;
+}
+
+.card.bg-primary:hover, .card.bg-success:hover, .card.bg-info:hover, .card.bg-warning:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* 关键词标签样式 */
+.keyword-tag {
+    display: inline-block;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.keyword-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+}
+
+.keyword-tag.positive {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+}
+
+.keyword-tag.negative {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+}
+
+.keyword-tag.neutral {
+    background: linear-gradient(45deg, #6c757d, #545b62);
+}
+
+/* 文章列表样式 */
+.article-item {
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 0;
+    transition: background-color 0.2s;
+}
+
+.article-item:hover {
+    background-color: #f8f9fa;
+}
+
+.article-item:last-child {
+    border-bottom: none;
+}
+
+.article-title {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.article-meta {
+    font-size: 0.85em;
+    color: #6c757d;
+}
+
+.article-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+.article-stats span {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* 图表容器样式 */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 20px 0;
+}
+
+/* 进度条样式 */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 5px;
+    transition: width 0.6s ease;
+}
+
+/* 连接状态指示器 */
+#connection-status {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 15px;
+    }
+    
+    .article-stats {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 数据更新动画 */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 0.3s ease-in-out;
+}
+
+/* 加载状态 */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

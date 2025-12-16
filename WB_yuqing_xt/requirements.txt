@@ -1,0 +1,28 @@
+# Web框架
+Flask
+Flask-SocketIO
+
+# 数据处理
+pandas
+numpy
+
+# 中文分词和文本处理
+jieba
+
+# HTTP请求
+requests
+
+# 数据库
+sqlite3  # Python内置
+
+# 缓存（可选）
+redis
+
+# 其他工具
+python-socketio
+python-engineio
+eventlet
+
+# 开发工具（可选）
+pytest
+pytest-cov
